@@ -1623,13 +1623,15 @@ def roundEnd():
     again_draw = True
 
 def doubleDown():
-    global betAmount, doubleDown1,doubleDownamount,money
+    global betAmount, doubleDown1,doubleDownamount,money,stopBet,stand1
     if doubleDown1 == True:
         doubleDownamount = betAmount
         if money >= doubleDownamount:
             betAmount += doubleDownamount
             money -= doubleDownamount
             doubleDown1 = False
+            stopBet = True
+            stand1 = True
 def gameOver():
     global gameOver1
     gameOver1 = True
