@@ -784,10 +784,11 @@ def draw():
     screen.blit("background", (0,0))
 
     if gameOver1 == True:
+        card1reset()
         screen.clear()
-        screen.draw.text("You Lose", color="white", center=(WIDTH / 2, HEIGHT/ 2 ), fontsize=200)
+        screen.draw.text("Out of Money", color="white", center=(WIDTH / 2, HEIGHT/ 2 ), fontsize=200)
 
-    if again_draw == True:
+    if again_draw == True and gameOver1 == False:
         card1reset()
         screen.clear()
         again.draw()
@@ -797,17 +798,18 @@ def draw():
             houseWin.draw()
         if moneyback1 == True:
             tie.draw()
-    screen.draw.text(str(cardCount), color="white", center=(800, 800), fontsize=100)
-    screen.draw.text(str(botcardCount), color="white", center=(800, 300), fontsize=100)
-    screen.draw.text("Money:" + str(money), color="white", center=(800, 100), fontsize=100)
-    screen.draw.text("Bet:" + str(betAmount), color="white", center=(150, 100), fontsize=100)
-    if again_draw == False:
-        hit.draw()
-        stand.draw()
-        if stopBet == False:
-            bet.draw()
-        if doubleDown1 == True:
-            doubledown.draw()
+    if gameOver1 == False:
+        screen.draw.text(str(cardCount), color="white", center=(800, 800), fontsize=100)
+        screen.draw.text(str(botcardCount), color="white", center=(800, 300), fontsize=100)
+        screen.draw.text("Money:" + str(money), color="white", center=(800, 100), fontsize=100)
+        screen.draw.text("Bet:" + str(betAmount), color="white", center=(150, 100), fontsize=100)
+        if again_draw == False:
+            hit.draw()
+            stand.draw()
+            if stopBet == False:
+                bet.draw()
+            if doubleDown1 == True:
+                doubledown.draw()
 
     if spade2_draw1 == True:
         spade2.draw()
@@ -1591,6 +1593,8 @@ def bust():
         playerLose()
     if cardCount == botcardCount:
         moneyBack()
+    if money <= 0:
+        gameOver()
     roundEnd()
 def moneyBack():
     global money, betAmount,moneyback1
