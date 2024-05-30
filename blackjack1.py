@@ -1625,7 +1625,7 @@ def roundEnd():
 def doubleDown():
     global betAmount, doubleDown1,doubleDownamount,money
     if doubleDown1 == True:
-        doubleDownamount = betAmount + betAmount
+        doubleDownamount = betAmount
         if money >= doubleDownamount:
             betAmount += doubleDownamount
             money -= doubleDownamount
