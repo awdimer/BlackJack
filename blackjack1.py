@@ -186,7 +186,7 @@ stopBet = False
 again_draw = False
 moneyback1 = False
 doubleDown1 = False
-
+gameOver1 = False
 
 
 play = Actor("play")
@@ -783,6 +783,10 @@ def draw():
     screen.clear()
     screen.blit("background", (0,0))
 
+    if gameOver1 == True:
+        screen.clear()
+        screen.draw.text("You Lose", color="white", center=(WIDTH / 2, HEIGHT/ 2 ), fontsize=200)
+
     if again_draw == True:
         card1reset()
         screen.clear()
@@ -795,8 +799,8 @@ def draw():
             tie.draw()
     screen.draw.text(str(cardCount), color="white", center=(800, 800), fontsize=100)
     screen.draw.text(str(botcardCount), color="white", center=(800, 300), fontsize=100)
-    screen.draw.text(str(money), color="white", center=(800, 100), fontsize=100)
-    screen.draw.text(str(betAmount), color="white", center=(100, 100), fontsize=100)
+    screen.draw.text("Money:" + str(money), color="white", center=(800, 100), fontsize=100)
+    screen.draw.text("Bet:" + str(betAmount), color="white", center=(150, 100), fontsize=100)
     if again_draw == False:
         hit.draw()
         stand.draw()
@@ -1165,6 +1169,9 @@ def update():
     heartAce.y = HEIGHT / 2
     heartAce.scale = 0.5
 
+
+    if money >= 0:
+        gamOver()
 
     if stand1 == True:
         if botcardCount < cardCount and botcardCount < 21:
@@ -1620,5 +1627,9 @@ def doubleDown():
         betAmount += doubleDownamount
         money -= doubleDownamount
         doubleDown1 = False
+def gameOver:
+    global gameOver1
+    gameOver1 = True
+
 
 pgzrun.go()
