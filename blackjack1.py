@@ -187,7 +187,7 @@ again_draw = False
 moneyback1 = False
 doubleDown1 = False
 gameOver1 = False
-
+doubleGenerate1 = False
 
 play = Actor("play")
 hit = Actor("hit")
@@ -1623,10 +1623,11 @@ def roundEnd():
     again_draw = True
 
 def doubleDown():
-    global betAmount, doubleDown1,doubleDownamount,money,stopBet,stand1
+    global betAmount, doubleDown1,doubleDownamount,money,stopBet,stand1,doubleGenerate1
     if doubleDown1 == True:
         doubleDownamount = betAmount
         if money >= doubleDownamount:
+            doubleGenerate1 = True
             doubleGenerate()
             betAmount += doubleDownamount
             money -= doubleDownamount
@@ -1635,8 +1636,8 @@ def doubleDown():
             stand1 = True
 
 def doubleGenerate():
-    global hit1,stopBet,doubleDown1,cardCount
-    if cardCount < 21:
+    global hit1,stopBet,doubleDown1,cardCount,doubleGenerate1
+    if doubleGenerate1 == True:
         generateCard()
         if spade2_draw == True:
             cardCount += 2
@@ -1757,11 +1758,7 @@ def doubleGenerate():
                 cardCount += 1
             else:
                 cardCount += 10
-        hit1 = False
-        cardreset()
-    else:
-        bust()
-        cardreset()
+        doubleGenerate1 = False
 
 
 def cardreset():
