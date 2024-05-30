@@ -1171,7 +1171,7 @@ def update():
 
 
     if money >= 0:
-        gamOver()
+        gameOver()
 
     if stand1 == True:
         if botcardCount < cardCount and botcardCount < 21:
