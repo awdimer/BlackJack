@@ -1170,8 +1170,6 @@ def update():
     heartAce.scale = 0.5
 
 
-    if money >= 0:
-        gameOver()
 
     if stand1 == True:
         if botcardCount < cardCount and botcardCount < 21:
@@ -1601,7 +1599,7 @@ def moneyBack():
     betAmount = 0
 def bet1():
     global money, betAmount, stopBet
-    if stopBet == False:
+    if stopBet == False and money > 9:
         money -= 10
         betAmount += 10
 def playerWin():
@@ -1624,9 +1622,10 @@ def doubleDown():
     global betAmount, doubleDown1,doubleDownamount,money
     if doubleDown1 == True:
         doubleDownamount = betAmount * 2
-        betAmount += doubleDownamount
-        money -= doubleDownamount
-        doubleDown1 = False
+        if money >= doubleDownamount:
+            betAmount += doubleDownamount
+            money -= doubleDownamount
+            doubleDown1 = False
 def gameOver():
     global gameOver1
     gameOver1 = True
