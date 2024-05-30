@@ -1543,7 +1543,7 @@ def card1reset():
     heartAce_draw1 = False
 
 def resetAll():
-    global hit1, stand1,botcardCount, cardCount, betAmount, again_draw,stopBet,moneyback1,doubleDown1,doubleDownamount
+    global hit1, stand1,botcardCount, cardCount, betAmount, again_draw,stopBet,moneyback1,doubleDown1,doubleDownamount,playerLoose,playerWin1
     cardreset()
     card1reset()
     hit1 = False
@@ -1556,6 +1556,8 @@ def resetAll():
     moneyback1 = False
     doubleDown1 = False
     doubleDownamount = 0
+    playerLoose = False
+    playerWin1 = False
 
 def on_mouse_down(pos):
     global hit1,hit,stand,stand1,bet2
