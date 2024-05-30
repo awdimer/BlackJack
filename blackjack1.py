@@ -1627,7 +1627,7 @@ def doubleDown():
         betAmount += doubleDownamount
         money -= doubleDownamount
         doubleDown1 = False
-def gameOver:
+def gameOver():
     global gameOver1
     gameOver1 = True
 
