@@ -1627,11 +1627,298 @@ def doubleDown():
     if doubleDown1 == True:
         doubleDownamount = betAmount
         if money >= doubleDownamount:
+            doubleGenerate()
             betAmount += doubleDownamount
             money -= doubleDownamount
             doubleDown1 = False
             stopBet = True
             stand1 = True
+
+def doubleGenerate():
+    global hit1,stopBet,doubleDown1,cardCount
+    if cardCount < 21:
+        generateCard()
+        if spade2_draw == True:
+            cardCount += 2
+        if spade3_draw == True:
+            cardCount += 3
+        if spade4_draw == True:
+            cardCount += 4
+        if spade5_draw == True:
+            cardCount += 5
+        if spade6_draw == True:
+            cardCount += 6
+        if spade7_draw == True:
+            cardCount += 7
+        if spade8_draw == True:
+            cardCount += 8
+        if spade9_draw == True:
+            cardCount += 9
+        if spade10_draw == True:
+            cardCount += 10
+        if spadeJack_draw == True:
+            cardCount += 10
+        if spadeQueen_draw == True:
+            cardCount += 10
+        if spadeKing_draw == True:
+            cardCount += 10
+        if spadeAce_draw == True:
+            if cardCount >= 12:
+                cardCount += 1
+            else:
+                cardCount += 10
+
+        if club2_draw == True:
+            cardCount += 2
+        if club3_draw == True:
+            cardCount += 3
+        if club4_draw == True:
+            cardCount += 4
+        if club5_draw == True:
+            cardCount += 5
+        if club6_draw == True:
+            cardCount += 6
+        if club7_draw == True:
+            cardCount += 7
+        if club8_draw == True:
+            cardCount += 8
+        if club9_draw == True:
+            cardCount += 9
+        if spade10_draw == True:
+            cardCount += 10
+        if clubJack_draw == True:
+            cardCount += 10
+        if clubQueen_draw == True:
+            cardCount += 10
+        if clubKing_draw == True:
+            cardCount += 10
+        if clubAce_draw == True:
+            if cardCount >= 12:
+                cardCount += 1
+            else:
+                cardCount += 10
+
+        if diamond2_draw == True:
+            cardCount += 2
+        if diamond3_draw == True:
+            cardCount += 3
+        if diamond4_draw == True:
+            cardCount += 4
+        if diamond5_draw == True:
+            cardCount += 5
+        if diamond6_draw == True:
+            cardCount += 6
+        if diamond7_draw == True:
+            cardCount += 7
+        if diamond8_draw == True:
+            cardCount += 8
+        if diamond9_draw == True:
+            cardCount += 9
+        if diamond10_draw == True:
+            cardCount += 10
+        if diamondJack_draw == True:
+            cardCount += 10
+        if diamondQueen_draw == True:
+            cardCount += 10
+        if diamondKing_draw == True:
+            cardCount += 10
+        if diamondAce_draw == True:
+            if cardCount >= 12:
+                cardCount += 1
+            else:
+                cardCount += 10
+
+        if heart2_draw == True:
+            cardCount += 2
+        if heart3_draw == True:
+            cardCount += 3
+        if heart4_draw == True:
+            cardCount += 4
+        if heart5_draw == True:
+            cardCount += 5
+        if heart6_draw == True:
+            cardCount += 6
+        if heart7_draw == True:
+            cardCount += 7
+        if heart8_draw == True:
+            cardCount += 8
+        if heart9_draw == True:
+            cardCount += 9
+        if heart10_draw == True:
+            cardCount += 10
+        if heartJack_draw == True:
+            cardCount += 10
+        if heartQueen_draw == True:
+            cardCount += 10
+        if heartKing_draw == True:
+            cardCount += 10
+        if heartAce_draw == True:
+            if cardCount >= 12:
+                cardCount += 1
+            else:
+                cardCount += 10
+        hit1 = False
+        cardreset()
+    else:
+        bust()
+        cardreset()
+
+
+def cardreset():
+    global club2_draw, club3_draw, club4_draw, club5_draw, club6_draw, club7_draw, club8_draw, club9_draw, club10_draw, clubJack_draw, clubQueen_draw, clubKing_draw, clubAce_draw, spade2_draw, spade3_draw, spade4_draw, spade5_draw, spade6_draw, spade7_draw, spade8_draw, spade9_draw, spade10_draw, spadeJack_draw, spadeQueen_draw, spadeKing_draw, spadeAce_draw, diamond2_draw, diamond3_draw, diamond4_draw, diamond5_draw, diamond6_draw, diamond7_draw, diamond8_draw, diamond9_draw, diamond10_draw, diamondJack_draw, diamondQueen_draw, diamondKing_draw, diamondAce_draw, heart2_draw, heart3_draw, heart4_draw, heart5_draw, heart6_draw, heart7_draw, heart8_draw, heart9_draw, heart10_draw, heartJack_draw, heartQueen_draw, heartKing_draw, heartAce_draw
+    spade2_draw = False
+    spade3_draw = False
+    spade4_draw = False
+    spade5_draw = False
+    spade6_draw = False
+    spade7_draw = False
+    spade8_draw = False
+    spade9_draw = False
+    spade10_draw = False
+    spadeJack_draw = False
+    spadeQueen_draw = False
+    spadeKing_draw = False
+    spadeAce_draw = False
+
+    club2_draw = False
+    club3_draw = False
+    club4_draw = False
+    club5_draw = False
+    club6_draw = False
+    club7_draw = False
+    club8_draw = False
+    club9_draw = False
+    club10_draw = False
+    clubJack_draw = False
+    clubQueen_draw = False
+    clubKing_draw = False
+    clubAce_draw = False
+
+    diamond2_draw = False
+    diamond3_draw = False
+    diamond4_draw = False
+    diamond5_draw = False
+    diamond6_draw = False
+    diamond7_draw = False
+    diamond8_draw = False
+    diamond9_draw = False
+    diamond10_draw = False
+    diamondJack_draw = False
+    diamondQueen_draw = False
+    diamondKing_draw = False
+    diamondAce_draw = False
+
+    heart2_draw = False
+    heart3_draw = False
+    heart4_draw = False
+    heart5_draw = False
+    heart6_draw = False
+    heart7_draw = False
+    heart8_draw = False
+    heart9_draw = False
+    heart10_draw = False
+    heartJack_draw = False
+    heartQueen_draw = False
+    heartKing_draw = False
+    heartAce_draw = False
+
+
+def card1reset():
+    global spade2_draw1, spade3_draw1, spade4_draw1, spade5_draw1, spade6_draw1, spade7_draw1, spade8_draw1, spade9_draw1, spade10_draw1, spadeJack_draw1, spadeQueen_draw1, spadeKing_draw1, spadeAce_draw1, club2_draw1, club3_draw1, club4_draw1, club5_draw1, club6_draw1, club7_draw1, club8_draw1, club9_draw1, club10_draw1, clubJack_draw1, clubQueen_draw1, clubKing_draw1, clubAce_draw1, diamond2_draw1, diamond3_draw1, diamond4_draw1, diamond5_draw1, diamond6_draw1, diamond7_draw1, diamond8_draw1, diamond9_draw1, diamond10_draw1, diamondJack_draw1, diamondQueen_draw1, diamondKing_draw1, diamondAce_draw1, heart2_draw1, heart3_draw1, heart4_draw1, heart5_draw1, heart6_draw1, heart7_draw1, heart8_draw1, heart9_draw1, heart10_draw1, heartJack_draw1, heartQueen_draw1, heartKing_draw1, heartAce_draw1
+    spade2_draw1 = False
+    spade3_draw1 = False
+    spade4_draw1 = False
+    spade5_draw1 = False
+    spade6_draw1 = False
+    spade7_draw1 = False
+    spade8_draw1 = False
+    spade9_draw1 = False
+    spade10_draw1 = False
+    spadeJack_draw1 = False
+    spadeQueen_draw1 = False
+    spadeKing_draw1 = False
+    spadeAce_draw1 = False
+
+    club2_draw1 = False
+    club3_draw1 = False
+    club4_draw1 = False
+    club5_draw1 = False
+    club6_draw1 = False
+    club7_draw1 = False
+    club8_draw1 = False
+    club9_draw1 = False
+    club10_draw1 = False
+    clubJack_draw1 = False
+    clubQueen_draw1 = False
+    clubKing_draw1 = False
+    clubAce_draw1 = False
+
+    diamond2_draw1 = False
+    diamond3_draw1 = False
+    diamond4_draw1 = False
+    diamond5_draw1 = False
+    diamond6_draw1 = False
+    diamond7_draw1 = False
+    diamond8_draw1 = False
+    diamond9_draw1 = False
+    diamond10_draw1 = False
+    diamondJack_draw1 = False
+    diamondQueen_draw1 = False
+    diamondKing_draw1 = False
+    diamondAce_draw1 = False
+
+    heart2_draw1 = False
+    heart3_draw1 = False
+    heart4_draw1 = False
+    heart5_draw1 = False
+    heart6_draw1 = False
+    heart7_draw1 = False
+    heart8_draw1 = False
+    heart9_draw1 = False
+    heart10_draw1 = False
+    heartJack_draw1 = False
+    heartQueen_draw1 = False
+    heartKing_draw1 = False
+    heartAce_draw1 = False
+
+
+def resetAll():
+    global hit1, stand1, botcardCount, cardCount, betAmount, again_draw, stopBet, moneyback1, doubleDown1, doubleDownamount, playerLoose, playerWin1, playerWin2
+    cardreset()
+    card1reset()
+    hit1 = False
+    stand1 = False
+    botcardCount = 0
+    cardCount = 0
+    again_draw = False
+    betAmount = 0
+    stopBet = False
+    moneyback1 = False
+    doubleDown1 = False
+    doubleDownamount = 0
+    playerLoose = False
+    playerWin2 = False
+
+
+def on_mouse_down(pos):
+    global hit1, hit, stand, stand1, bet2
+    if hit.collidepoint(pos):
+        hit1 = True
+    if stand.collidepoint(pos):
+        stand1 = True
+    if bet.collidepoint(pos):
+        bet1()
+        bet2 = True
+    if again.collidepoint(pos):
+        resetAll()
+    if doubledown.collidepoint(pos):
+        if doubleDown1 == True:
+            doubleDown()
+
+    else:
+        print()
+
+
 def gameOver():
     global gameOver1
     gameOver1 = True
